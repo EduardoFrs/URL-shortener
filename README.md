@@ -29,7 +29,6 @@ The API will be available at http://127.0.0.1:8000
 ## Future Improvements
 
 - Add database for store the URL and number of clicks
-- Fix the counter problem
 
 ## Authors
 

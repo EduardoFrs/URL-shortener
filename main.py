@@ -37,9 +37,10 @@ def shorten_url(url: URLBase):
 @app.get("/{short_key}")
 def redirect_url(short_key: str, response: Response):
     long_url = urls.get(short_key)
+    clicks[short_key] += 1
+
     if not long_url:
         raise HTTPException(status_code=404, detail="URL not found")
-        clicks[short_key] = clicks.get(short_key, 0) + 1
     response.status_code = 307
     response.headers["Location"] = long_url
     return response
